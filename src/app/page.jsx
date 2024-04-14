@@ -2,19 +2,19 @@
 // import { SpeedInsights } from "@vercel/speed-insights/next";
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import SkillsWidget from "/workspaces/cs220-portfolio-team-3-kaiden-gustavo-thomas/src/components/SkillsWidget Component/SkillsWidget.jsx";
-import "/workspaces/cs220-portfolio-team-3-kaiden-gustavo-thomas/src/components/SkillsWidgetComponent/SkillsWidget.css";
-import WorkWidget from "/workspaces/cs220-portfolio-team-3-kaiden-gustavo-thomas/src/components/WorkWidget Component/WorkWidget.jsx";
-import "/workspaces/cs220-portfolio-team-3-kaiden-gustavo-thomas/src/components/WorkWidget/component/WorkWidget.css";
-import Navbar from "/workspaces/cs220-portfolio-team-3-kaiden-gustavo-thomas/src/components/Navbar component/Navbar.jsx";
-import Footer from "/workspaces/cs220-portfolio-team-3-kaiden-gustavo-thomas/src/components/Footer component/Footer.jsx";
-import "/workspaces/cs220-portfolio-team-3-kaiden-gustavo-thomas/src/components/Footer component/Footer.css";
-import SignupWidget from "/workspaces/cs220-portfolio-team-3-kaiden-gustavo-thomas/src/components/SignupWidget Component/SignupWidget.jsx";
-import "/workspaces/cs220-portfolio-team-3-kaiden-gustavo-thomas/src/components/SignupWidget Component/SingupWidget.css";
-import ThemeSwitcher from "/workspaces/cs220-portfolio-team-3-kaiden-gustavo-thomas/src/components/Theme Switcher/ThemeSwitcher.jsx";
-import "/workspaces/cs220-portfolio-team-3-kaiden-gustavo-thomas/src/components/Theme Switcher/ThemeSwitcher.css";
-import ArticleCard from "/workspaces/cs220-portfolio-team-3-kaiden-gustavo-thomas/src/components/Article Card component/ArticleCard.jsx";
-import "/workspaces/cs220-portfolio-team-3-kaiden-gustavo-thomas/src/components/Article Card component/ArticleCard.css";
+import SkillsWidget from "/workspaces/portfolio/src/components/SkillsWidget Component/SkillsWidget.jsx";
+import "/workspaces/portfolio/src/components/SkillsWidget Component/SkillsWidget.css";
+import WorkWidget from "/workspaces/portfolio/src/components/WorkWidget Component/WorkWidget.jsx";
+import "/workspaces/portfolio/src/components/WorkWidget Component/WorkWidget.css";
+import Navbar from "/workspaces/portfolio/src/components/Navbar component/Navbar.jsx";
+import Footer from "/workspaces/portfolio/src/components/Footer component/Footer.jsx";
+import "/workspaces/portfolio/src/components/Footer component/Footer.css";
+import SignupWidget from "/workspaces/portfolio/src/components/SignupWidget Component/SignupWidget.jsx";
+import "/workspaces/portfolio/src/components/SignupWidget Component/SingupWidget.css";
+import ThemeSwitcher from "/workspaces/portfolio/src/components/Theme Switcher/ThemeSwitcher.jsx";
+import "/workspaces/portfolio/src/components/Theme Switcher/ThemeSwitcher.css";
+import ArticleCard from "/workspaces/portfolio/src/components/Article Card component/ArticleCard.jsx";
+import "/workspaces/portfolio/src/components/Article Card component/ArticleCard.css";
 import "./home.css";
 
 export const HomePage = {
@@ -112,7 +112,7 @@ export default function Home() {
         <div className="headerish">
           <img src="./me1.jpg" alt="giga" className="chad"></img>
           <div>
-            <h1 className="title">HELLO</h1>
+            <h1 className="title">Tech Enthusiast, Soccer Lover & Foodie Friend</h1>
           </div>
 
           <section className="mb-8">

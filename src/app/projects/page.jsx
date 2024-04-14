@@ -4,10 +4,10 @@ import PropTypes from "prop-types";
 import Navbar from "../../components/Navbar component/Navbar.jsx";
 import FooterComponent from "../../components/Footer component/Footer.jsx"; // Renamed to avoid conflicts
 import "../../components/Footer component/Footer.css";
-import ProjectCard from "/workspaces/cs220-portfolio-team-3-kaiden-gustavo-thomas/src/components/Project Card component/ProjectCard.jsx";
-import "/workspaces/cs220-portfolio-team-3-kaiden-gustavo-thomas/src/components/Project Card component/ProjectCard.css";
-import ThemeSwitcher from "/workspaces/cs220-portfolio-team-3-kaiden-gustavo-thomas/src/components/Theme Switcher/ThemeSwitcher.jsx";
-import "/workspaces/cs220-portfolio-team-3-kaiden-gustavo-thomas/src/components/Theme Switcher/ThemeSwitcher.css";
+import ProjectCard from "../../components/Project Card component/ProjectCard.jsx";
+import "../../components/Project Card component/ProjectCard.css";
+import ThemeSwitcher from "../../components/Theme Switcher/ThemeSwitcher.jsx";
+import "../../components/Theme Switcher/ThemeSwitcher.css";
 import "./projects.css";
 export const ProjectsPage = {
   title: "Portfolio - Projects",
@@ -57,7 +57,7 @@ export default function Projects() {
           <div>
             <section>
               <ProjectCard
-                logo="/ensign.png"
+                logo="/healthlogo.jpeg"
                 name="HealthSync AI"
                 content="Developed an AI-driven health monitoring platform that leverages machine learning to predict patient health events based on historical data and real-time inputs."
                 link="/project-url"
@@ -65,7 +65,7 @@ export default function Projects() {
               {/* Add more ProjectCard components as needed */}
             </section>
             <ProjectCard
-              logo="/ensign.png"
+              logo="/traffic lights.jpeg"
               name="Smart Traffic Controller"
               content="Initiated and led the development of a Smart Traffic Management System designed to optimize traffic flow in urban areas."
               link="/project-url"
@@ -75,7 +75,7 @@ export default function Projects() {
           <div>
             <section>
               <ProjectCard
-                logo="/ensign.png"
+                logo="/data.jpeg"
                 name="Application Integration Platform"
                 content="Developed a comprehensive integration platform that facilitated the seamless synchronization of data across various business applications, enhancing operational efficiency and data reliability."
                 link="/project-url"
@@ -83,7 +83,7 @@ export default function Projects() {
               {/* Add more ProjectCard components as needed */}
             </section>
             <ProjectCard
-              logo="/ensign.png"
+              logo="/cloud.jpeg"
               name="Cloud Solutions Deployment"
               content="Led the deployment of scalable cloud solutions that supported enterprise-level applications, ensuring robust security measures and system scalability were in place to handle significant user loads."
               link="/project-url"
@@ -93,7 +93,7 @@ export default function Projects() {
           <div>
             <section>
               <ProjectCard
-                logo="/ensign.png"
+                logo="/commerce.jpeg"
                 name="E-commerce Optimization"
                 content="Engineered enhancements for an e-commerce platform that improved the checkout process, significantly reducing cart abandonment rates and boosting user satisfaction and sales figures."
                 link="/project-url"
@@ -101,7 +101,7 @@ export default function Projects() {
               {/* Add more ProjectCard components as needed */}
             </section>
             <ProjectCard
-              logo="/ensign.png"
+              logo="/analytics.jpeg"
               name="Data Analytics Suite"
               content="Created a data analytics suite that provided actionable insights through advanced data visualizations, aiding strategic decision-making and identifying key market trends."
               link="/project-url"
