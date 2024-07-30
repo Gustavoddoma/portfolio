@@ -1,116 +1,101 @@
-import Image from 'next/image';
+import TitleCard from "@/components/structure/TitleCard/TitleCard";
+import SignupWidget from "@/components/structure/Signup/SignupWidget";
+import ArticleCard from "@/components/structure/ArticleCard/ArticleCard";
+import WorkWidget from "@/components/structure/WorkWidget/WorkWidget";
+import SkillsWidget from "@/components/structure/SkillsWidget/SkillsWidget";
+
+// Icons
+import Linkedin from "@/components/ui/icons/linkedin";
+import Github from "@/components/ui/icons/github";
+import X from "@/components/ui/icons/x";
+import Link from "next/link";
 
 export default function Home() {
+  const links = [
+    {
+      name: "X",
+      url: "https://x.com/gustavoddoma",
+      icon: <X />,
+    },
+    {
+      name: "GitHub",
+      url: "https://github.com/Gustavoddoma",
+      icon: <Github />,
+    },
+    {
+      name: "LinkedIn",
+      url: "https://linkedin.com/in/gustavoddoma",
+      icon: <Linkedin />,
+    },
+  ];
+
+  const articles = [
+    {
+      date: "Sep 2020 - Jan 2021 · 5 mos",
+      title: "Project Advisor @ ECOMP - Junior IT Company at UFPR",
+      content:
+        "I participated in the front-end development team for several institutional website and mobile application projects at a junior company of the university I first attended. In this unpaid position, I utilized technologies such as React Native, Vue.js, HTML5, and CSS to contribute to the design and implementation of user-friendly interfaces. This experience allowed me to develop my skills in front-end development while collaborating with a team to deliver impactful digital solutions.",
+      link: "https://www.ecomp.co/?fbclid=IwY2xjawEUppJleHRuA2FlbQIxMAABHXFfde6WCis3SRyjvIZ5hyLwNT6wrf006aS8QQbynp2eA_SJH7ho0QzUcQ_aem_d7y_OX2mf5iWDUEt647m3Q",
+    },
+    {
+      date: "Aug 2021 - Jul 2023",
+      title: "Full-Time Missionary @ The Church of Jesus Christ of The Latter-Day Saints",
+      content:
+        "I served a full-time mission for The Church of Jesus Christ of Latter-day Saints in the northern part of Brazil, specifically in the states of Amazonas and Acre. During my mission, I helped people come closer to Christ through teachings focused on faith, repentance, baptism, receiving the Holy Ghost, and enduring to the end. This experience was transformative for me personally, as I learned valuable skills in interpersonal communication, cultural understanding, and personal growth. My time in Brazil allowed me to develop a deeper sense of empathy and resilience, which continue to influence my interactions with others.",
+      link: "https://www.churchofjesuschrist.org/?lang=eng",
+    },
+    {
+      date: "Jan 2024 - Present",
+      title: "Front Desk @ Student Success Center - Ensign College",
+      content:
+        "I am currently working at Ensign College as the front desk representative of the Student Success Center. In this role, I assist students in connecting with their academic advisors, success coaches, peer mentors, and tutors to ensure that students have access to the resources and guidance they need to achieve success in their college journey.",
+      link: "https://www.ensign.edu/student-success-center",
+    },
+  ];
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p
-          className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.js</code>
-        </p>
-        <div
-          className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className="flex h-full flex-col gap-6">
+      <div className="flex flex-col gap-6 lg:w-full lg:max-w-3xl">
+        <TitleCard
+          profile={true}
+          title={"Tech Enthusiast, Soccer Lover & Foodie Friend"}
+          paragraphs={[
+            "I'm a 23-year-old Brazilian on the journey to becoming a Software Developer. I'm currently pursuing my Associate's Degree in Computer Science at Ensign. Before this, I just returned from a mission in the Brazil Manaus mission. In my free time, I'm a fan of Mexican cuisine and a dedicated sports enthusiast, with soccer being a particular passion of mine.  ",
+          ]}
+        />
+        <div className="flex gap-3">
+          {links.map((link, key) => {
+            return (
+              <Link key={key} href={link.url} target="_blank">
+                {link.icon}
+              </Link>
+            );
+          })}
         </div>
       </div>
-
-      <div
-        className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <div className="flex flex-col lg:flex-row lg:justify-between">
+        <div className="flex w-fit flex-col gap-5 py-8 lg:w-full lg:max-w-lg lg:mr-16">
+          {articles.map((article, key) => {
+            return (
+              <ArticleCard
+                key={key}
+                date={article.date}
+                title={article.title}
+                content={article.content}
+                link={article.link}
+              />
+            );
+          })}
+        </div>
+        <div className="flex flex-col gap-10 py-8 lg:w-full lg:max-w-sm">
+          <SignupWidget
+            title="Stay up to date"
+            content="Get notified when I publish something new, and unsubscribe at any time."
+          />
+          <WorkWidget />
+          <SkillsWidget />
+        </div>
       </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </div>
   );
 }

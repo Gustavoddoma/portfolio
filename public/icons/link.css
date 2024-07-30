@@ -1,0 +1,8 @@
+svg {
+    fill: #000;
+  }
+  
+  /* Dark theme */
+  [data-theme="dark"] svg {
+    fill: #fff;
+  }

@@ -1,23 +1,51 @@
 // get env variable
-import dotenv from 'dotenv';
+import dotenv from "dotenv";
 
 dotenv.config();
 
-const env = process.env.NODE_ENV || 'development';
+const env = process.env.NODE_ENV || "development";
 
 /** @type {import('next').NextConfig} */
 const nextConfigProd = {
-  output: 'export',
-  basePath: '/portfolio',
+  output: "export",
+  basePath: "/portfolio",
   images: {
-    loader: 'custom',
-    loaderFile: './src/lib/image.loader.js',
+    loader: "custom",
+    loaderFile: "./src/lib/image.loader.js",
   },
 };
 
 /** @type {import('next').NextConfig} */
-const nextConfigDev = {};
+const nextConfigDev = {
+  webpack(config) {
+    // Grab the existing rule that handles SVG imports
+    const fileLoaderRule = config.module.rules.find((rule) =>
+      rule.test?.test?.(".svg")
+    );
 
-const nextConfig = env === 'development' ? nextConfigDev : nextConfigProd;
+    config.module.rules.push(
+      // Reapply the existing rule, but only for svg imports ending in ?url
+      {
+        ...fileLoaderRule,
+        test: /\.svg$/i,
+        resourceQuery: /url/, // *.svg?url
+      },
+      // Convert all other *.svg imports to React components
+      {
+        test: /\.svg$/i,
+        issuer: fileLoaderRule.issuer,
+        resourceQuery: { not: [...fileLoaderRule.resourceQuery.not, /url/] }, // exclude if *.svg?url
+        use: ["@svgr/webpack"],
+      }
+    );
+
+    // Modify the file loader rule to ignore *.svg, since we have it handled now.
+    fileLoaderRule.exclude = /\.svg$/i;
+
+    return config;
+  },
+};
+
+const nextConfig = env === "development" ? nextConfigDev : nextConfigProd;
 
 export default nextConfig;
